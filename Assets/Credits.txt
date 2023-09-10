@@ -1,0 +1,37 @@
+Music:
+Option Menu By HeatleyBros - 
+https://youtu.be/krAEJH0SuGY
+
+Sound Effects:
+Shapeforms Audio Free Sound Effects
+https://assetstore.unity.com/packages/audio/sound-fx/shapeforms-audio-free-sound-effects-183649#content
+Footsteps - Essentials
+https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879
+Little Evil Free Sample Pack
+https://assetstore.unity.com/packages/audio/sound-fx/creatures/little-evil-free-sample-pack-141844#description
+Hero Character Voices: Juggernaut Voice Pack
+https://assetstore.unity.com/packages/audio/sound-fx/voices/hero-character-voices-juggernaut-voice-pack-213911
+
+Code:
+A* Pathfinding Project 
+https://arongranberg.com/astar/
+
+Tools I used:
+Unity
+https://unity.com
+PhotoCap 6.0
+https://web.archive.org/web/20130918031938/http://www.photocap.com.tw/intro/intro.htm
+Pixilart
+https://www.pixilart.com/draw
+
+Programmer:
+AnUncreativeGamer
+
+Art:
+AnUncreativeGamer
+
+Level Design:
+AnUncreativeGamer
+
+Emotional Support:
+my imaginawy fwiend owo
