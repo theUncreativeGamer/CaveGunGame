@@ -62,7 +62,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 65
-  beamWidth: 4
+  beamWidth: 6
   maxDistance: 300
   autoRedraw: 0
 --- !u!114 &2543715106575975629
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_Bits: 65
   damage: 8
   pullForce: 20
-  beamWidth: 4
+  beamWidth: 6
   maxDistance: 300
   caster: {fileID: 0}
   reversedRecoilMaxForce: 0

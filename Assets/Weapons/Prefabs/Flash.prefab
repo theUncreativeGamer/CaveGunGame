@@ -86,8 +86,8 @@ MonoBehaviour:
   wallLayers:
     serializedVersion: 2
     m_Bits: 65
-  maxDamage: 5
-  minDamage: 0
+  maxDamage: 6
+  minDamage: 6
   maxKnockback: 50
   minKnockback: 0
   fovDegrees: 30

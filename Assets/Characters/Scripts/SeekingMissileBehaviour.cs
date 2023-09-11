@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using Utilities;
 
 public class SeekingMissileBehaviour : MonoBehaviour
@@ -16,6 +17,7 @@ public class SeekingMissileBehaviour : MonoBehaviour
     public float aiDelay = 0.5f;
     [Tooltip("The amount of time it takes to be destroyed automatically, in case if it never reachs the target.")]
     public float lifeSpanSeconds = 50f;
+    public UnityEvent startAiEvents = null;
 
     [Header("Explosion")]
     public GameObject explosionEffectPrefab;
@@ -138,6 +140,7 @@ public class SeekingMissileBehaviour : MonoBehaviour
             aiPath.enabled = true;
             seeker.enabled = true;
             aiPath.destination = targetCollider.bounds.center;
+            startAiEvents.Invoke();
         }
         else
         {
