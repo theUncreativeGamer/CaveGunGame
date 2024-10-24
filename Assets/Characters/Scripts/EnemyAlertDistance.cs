@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,7 +16,7 @@ public class EnemyAlertDistance : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position,Vector3.forward, alertDistance);
+        Handles.DrawWireDisc(transform.position, Vector3.forward, alertDistance);
 
         Handles.color = Color.green;
         Handles.DrawWireDisc(transform.position, Vector3.forward, forgetDistance);
@@ -27,7 +25,7 @@ public class EnemyAlertDistance : MonoBehaviour
 
     public void Alert()
     {
-        if(!isAlerted)
+        if (!isAlerted)
         {
             isAlerted = true;
             alertEvent.Invoke();
@@ -39,28 +37,30 @@ public class EnemyAlertDistance : MonoBehaviour
         isAlerted = false;
         if (alertTarget == null)
         {
-            var list = GameObject.FindGameObjectsWithTag("Player");
-            foreach (var item in list)
+            var playerStuffs = GameObject.FindGameObjectsWithTag("Player");
+            foreach (var player in playerStuffs)
             {
-                if (item.GetComponent<HitpointSystem>() != null)
+                if (player.GetComponent<HitpointSystem>() != null)
                 {
-                    alertTarget = item.GetComponent<Collider2D>();
+                    alertTarget = player.GetComponent<Collider2D>();
                     break;
                 }
             }
+
+
         }
     }
 
     private void Update()
     {
-        if(alertTarget == null)
+        if (alertTarget == null)
         {
             isAlerted = false;
             return;
         }
         if (isAlerted)
         {
-            if(Vector2.Distance(alertTarget.bounds.center, transform.position) > forgetDistance)
+            if (Vector2.Distance(alertTarget.bounds.center, transform.position) > forgetDistance)
             {
                 isAlerted = false;
                 forgetEvent.Invoke();
@@ -68,7 +68,7 @@ public class EnemyAlertDistance : MonoBehaviour
         }
         else
         {
-            if(Vector2.Distance(alertTarget.bounds.center, transform.position) < alertDistance)
+            if (Vector2.Distance(alertTarget.bounds.center, transform.position) < alertDistance)
             {
                 isAlerted = true;
                 alertEvent.Invoke();

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Light Enemy
   - Dark Enemy
+  - PlayerHP
   layers:
   - Default
   - TransparentFX
