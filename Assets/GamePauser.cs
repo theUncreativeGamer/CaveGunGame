@@ -8,6 +8,7 @@ public class GamePauser : MonoBehaviour
     [SerializeField] private KeyCode pauseButton;
     public UnityEvent OnPause;
     public UnityEvent OnUnpause;
+    public UnityEvent OnEnd;
 
     private bool isPaused = false;
     void Update()
@@ -16,21 +17,6 @@ public class GamePauser : MonoBehaviour
         if (Input.GetKeyDown(pauseButton))
         {
             Pause();
-        }
-    }
-
-    private void OnGUI()
-    {
-        if (isPaused)
-        {
-            // Check for input while the game is paused
-            if (Event.current.type == EventType.KeyDown)
-            {
-                if (Event.current.keyCode == pauseButton)
-                {
-                    Unpause();
-                }
-            }
         }
     }
 
@@ -48,5 +34,18 @@ public class GamePauser : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
         OnUnpause.Invoke();
+    }
+
+    public void EndGame(float delay)
+    {
+        StartCoroutine(ActuallyEndGame(delay));
+    }
+
+    private IEnumerator ActuallyEndGame(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isPaused = true;
+        Time.timeScale = 0;
+        OnEnd.Invoke();
     }
 }

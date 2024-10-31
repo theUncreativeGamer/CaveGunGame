@@ -19,8 +19,8 @@ public class TitleArtEffect : MonoBehaviour
     private void Update()
     {
         Vector3 mousePos = Input.mousePosition - screenWidthAndHeight;
-        mousePos.x = Mathf.Clamp(mousePos.x * offsetLimits.x / screenWidthAndHeight.x, -1, 1);
-        mousePos.y = Mathf.Clamp(mousePos.y * offsetLimits.y / screenWidthAndHeight.y, -1, 1);
+        mousePos.x = Mathf.Clamp(mousePos.x / screenWidthAndHeight.x, -1, 1) * offsetLimits.x;
+        mousePos.y = Mathf.Clamp(mousePos.y / screenWidthAndHeight.y, -1, 1) * offsetLimits.y;
         transform.position = cameraDefaultPosition + mousePos;
     }
 }

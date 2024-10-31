@@ -7,6 +7,7 @@ public class CheckpointManager : MonoBehaviour
 
     [SerializeField] private bool resetCheckpoint = false;
     [SerializeField] private List<CheckpointBehaviour> checkpoints;
+    [SerializeField] private Transform player;
 
     public List<CheckpointBehaviour> Checkpoints { get { return checkpoints; } }
 
@@ -36,9 +37,17 @@ public class CheckpointManager : MonoBehaviour
         PlayerPrefs.DeleteKey(PlayerPrefKey);
     }
 
+    public void TeleportToNextCheckpoint()
+    {
+        int checkpointIndex = PlayerPrefs.GetInt(CheckpointManager.PlayerPrefKey, -1) + 1;
+        if (checkpointIndex >= Checkpoints.Count) checkpointIndex -= Checkpoints.Count;
+
+        player.position = Checkpoints[checkpointIndex].transform.position;
+    }
+
     private void OnValidate()
     {
-        if(resetCheckpoint)
+        if (resetCheckpoint)
         {
             resetCheckpoint = false;
             ResetCheckpoint();
