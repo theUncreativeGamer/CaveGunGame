@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 2151161036868006097}
   - component: {fileID: 8934957807479647841}
   - component: {fileID: 7591234650256533123}
+  - component: {fileID: 718724824033981378}
   m_Layer: 0
   m_Name: Checkpoint Lamp
   m_TagString: Untagged
@@ -271,6 +272,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 718724824033981378}
+        m_TargetAssemblyTypeName: TimerSaver, Assembly-CSharp
+        m_MethodName: SaveTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnDeactivate:
     m_PersistentCalls:
       m_Calls:
@@ -324,7 +337,7 @@ AudioSource:
   m_GameObject: {fileID: 6158692763212427553}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4643288193698111991, guid: 08425e8700856e448a73ca18f080fd42, type: 2}
   m_audioClip: {fileID: 8300000, guid: 426fdfc7130f32740b52a10be17bc3ff, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -411,3 +424,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &718724824033981378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6158692763212427553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b18aa6436233947a772edae8784ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

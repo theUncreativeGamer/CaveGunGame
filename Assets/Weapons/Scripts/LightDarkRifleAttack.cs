@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using CustomCallBacks;
 
 public class LightDarkRifleAttack : FirearmAttack
 {
@@ -14,6 +15,7 @@ public class LightDarkRifleAttack : FirearmAttack
     public GameObject beamPrefab;
 
     [Header("Stats")]
+    public SingleFloatCallBack CooldownDisplayCallBack = new();
     public float cooldownSeconds = 1;
 
     [Header("Recoil")]
@@ -89,5 +91,6 @@ public class LightDarkRifleAttack : FirearmAttack
     private void Update()
     {
         currentCooldown -= Time.deltaTime;
+        CooldownDisplayCallBack.Invoke(currentCooldown);
     }
 }
