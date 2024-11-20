@@ -35,28 +35,15 @@ public class EnemyAlertDistance : MonoBehaviour
     private void Start()
     {
         isAlerted = false;
-        if (alertTarget == null)
-        {
-            var playerStuffs = GameObject.FindGameObjectsWithTag("Player");
-            foreach (var player in playerStuffs)
-            {
-                if (player.GetComponent<HitpointSystem>() != null)
-                {
-                    alertTarget = player.GetComponent<Collider2D>();
-                    break;
-                }
-            }
-
-
-        }
     }
 
     private void Update()
     {
         if (alertTarget == null)
         {
-            isAlerted = false;
-            return;
+            if (PlayerSingleInstance.HitpointInstance != null)
+                alertTarget = PlayerSingleInstance.HitpointInstance.GetComponent<Collider2D>();
+            else return;
         }
         if (isAlerted)
         {

@@ -3,6 +3,17 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
+    public static CheckpointManager instance;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError($"Multiple instances of {nameof(CheckpointManager)} are loaded at the same time.");
+        }
+        instance = this;
+    }
+
+
     public static readonly string PlayerPrefKey = "CheckpointIndex";
 
     [SerializeField] private bool resetCheckpoint = false;
