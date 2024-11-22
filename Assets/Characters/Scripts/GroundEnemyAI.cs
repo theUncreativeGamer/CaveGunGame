@@ -33,6 +33,11 @@ public class GroundEnemyAI : MonoBehaviour
     private bool isFacingLeft = true;
     private bool isGrounded;
     
+    public void SetTargetToPlayer()
+    {
+        target = GameObject.Find("Player").transform;
+    }
+
     private bool IsSeeingWall(bool isFacingLeft)
     {
         Vector2 seeDirection = isFacingLeft ? Vector2.left : Vector2.right;

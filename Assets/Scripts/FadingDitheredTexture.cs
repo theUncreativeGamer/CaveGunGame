@@ -37,19 +37,23 @@ public class FadingDitheredTexture : MonoBehaviour
     void Update()
     {
         timerSeconds += Time.deltaTime;
+
         if(timerSeconds > lengthSeconds)
         {
             if (destroyGameObjectWhenFinished)
                 Destroy(gameObject);
             else
             {
-                float _fullness = curve.Evaluate(timerSeconds / lengthSeconds);
-                renderer.material.SetFloat("_DitherThreshold", 2 * _fullness);
-                this.enabled = false;
+                ChangeFullness();
             }
             return;
         }
 
+        ChangeFullness();
+    }
+
+    private void ChangeFullness()
+    {
         float fullness = curve.Evaluate(timerSeconds / lengthSeconds);
         renderer.material.SetFloat("_DitherThreshold", 2 * fullness);
     }
