@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.UI.Image;
 using Utilities;
 
-[RequireComponent(typeof(MyRotation))]
 public class FlashDealDamage : MonoBehaviour
 {
     [Header("Targets and Walls")]
@@ -23,14 +21,11 @@ public class FlashDealDamage : MonoBehaviour
     [Tooltip("Higher the value, higher the cost and accuracy.")]
     public int raycastCount = 10;
     public float maxDistance = 300f;
-    
-    private MyRotation m_Rotation;
 
     private HashSet<HitpointSystem> GetAllHits()
     {
-        float myRotation = m_Rotation.Value;
 
-        float angle = myRotation + (fovDegrees / 2);
+        float angle = transform.rotation.eulerAngles.z + (fovDegrees / 2);
         float angleIncrease = fovDegrees / raycastCount;
         Vector3 origin = Vector3.zero;
 
@@ -110,12 +105,6 @@ public class FlashDealDamage : MonoBehaviour
             hit.Hurt(damage);
             
         }
-    }
-
-
-    private void Awake()
-    {
-        m_Rotation = GetComponent<MyRotation>();
     }
 
     void Start()

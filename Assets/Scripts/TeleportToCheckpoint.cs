@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TeleportToCheckpoint : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
         int checkpointIndex = PlayerPrefs.GetInt(CheckpointManager.PlayerPrefKey, -1);
         if (checkpointIndex >= 0)

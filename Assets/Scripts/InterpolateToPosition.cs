@@ -4,6 +4,7 @@ public class InterpolateToPosition : MonoBehaviour
 {
     public AnimationCurve interpolationCurve = new AnimationCurve();
     public bool changeParent;
+    public bool newParentIsCamera;
     public Transform newParent;
     [Space(5)]
     public Vector3 newPosition;
@@ -24,6 +25,7 @@ public class InterpolateToPosition : MonoBehaviour
 
     public void Play()
     {
+        if(newParentIsCamera) newParent = Camera.main.transform;
         if (changeParent) transform.parent = newParent;
         if (useRectTransform) oldPosition = rectTransform.anchoredPosition;
         else oldPosition = transform.localPosition;

@@ -5,12 +5,20 @@ using UnityEngine.Events;
 
 public class GamePauser : MonoBehaviour
 {
+    public static GamePauser instance;
+
     [SerializeField] private KeyCode pauseButton;
     public UnityEvent OnPause;
     public UnityEvent OnUnpause;
+    public UnityEvent OnPrepareEnd;
     public UnityEvent OnEnd;
 
     private bool isPaused = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Update()
     {
         // Check for pause input (e.g., "Escape" key)
@@ -38,6 +46,7 @@ public class GamePauser : MonoBehaviour
 
     public void EndGame(float delay)
     {
+        OnPrepareEnd.Invoke();
         StartCoroutine(ActuallyEndGame(delay));
     }
 

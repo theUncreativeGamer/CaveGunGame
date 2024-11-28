@@ -17,6 +17,7 @@ public class LevelEssentialsLoader : MonoBehaviour
     public SceneObject SceneToLoad;
     public List<MoveObjectInstruction> PrefabsToMove;
     public UnityEvent OnSceneLoaded;
+    public UnityEvent OnPrepareEnd;
 
     private void Start()
     {
@@ -43,5 +44,11 @@ public class LevelEssentialsLoader : MonoBehaviour
             }
             obj.transform.position = instruction.destination.position;
         }
+    }
+
+    public void EndGame(float delay)
+    {
+        OnPrepareEnd?.Invoke();
+        GamePauser.instance.EndGame(delay);
     }
 }

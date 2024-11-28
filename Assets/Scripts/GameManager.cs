@@ -29,4 +29,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scene.name);
         Time.timeScale = 1f;
     }
+
+    public void TeleportToNextCheckPoint()
+    {
+        CheckpointManager.instance.TeleportToNextCheckpoint();
+    }
 }

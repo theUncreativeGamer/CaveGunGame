@@ -20,6 +20,15 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] private List<CheckpointBehaviour> checkpoints;
     [SerializeField] private Transform player;
 
+    private Transform Player 
+    {  
+        get 
+        { 
+            if( player == null ) player = PlayerSingleInstance.Instance.transform;
+            return player;
+        } 
+    }
+
     public List<CheckpointBehaviour> Checkpoints { get { return checkpoints; } }
 
     public bool SetCheckpoint(CheckpointBehaviour checkpoint)
@@ -53,7 +62,7 @@ public class CheckpointManager : MonoBehaviour
         int checkpointIndex = PlayerPrefs.GetInt(CheckpointManager.PlayerPrefKey, -1) + 1;
         if (checkpointIndex >= Checkpoints.Count) checkpointIndex -= Checkpoints.Count;
 
-        player.position = Checkpoints[checkpointIndex].transform.position;
+        Player.position = Checkpoints[checkpointIndex].transform.position;
     }
 
     private void OnValidate()

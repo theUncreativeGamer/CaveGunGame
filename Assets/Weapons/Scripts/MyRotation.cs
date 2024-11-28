@@ -7,7 +7,7 @@ using UnityEngine;
 // This MonoBehaviour is kinda stupid, I know.
 public class MyRotation : MonoBehaviour
 {
-    private float _daRotato = 0;
+    [SerializeField] private float _daRotato;
 
     public float Value { 
         get
