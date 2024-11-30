@@ -23,9 +23,9 @@ public class CheckpointBehaviour : MonoBehaviour
     public void Activate()
     {
         if (isActivated) return;
-        isActivated = true;
         _manager.DeactivateAll();
         _manager.SetCheckpoint(this);
+        isActivated = true;
         OnActivate.Invoke();
     }
 
