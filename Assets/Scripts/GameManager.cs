@@ -15,7 +15,13 @@ public class GameManager : MonoBehaviour
     public void ResetProgress()
     {
         PlayerPrefs.DeleteKey(TimerManager.timerPlayerPrefsKey);
-        PlayerPrefs.DeleteKey(CheckpointManager.PlayerPrefKey);
+        PlayerPrefs.DeleteKey(CheckpointManager.PPK_Checkpoint);
+        LevelLoader.ClearData();
+    }
+
+    public void LoadScene(SceneObject scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 
     public void Reload(float delay)

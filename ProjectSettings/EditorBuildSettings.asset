@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Screen.unity
     guid: d9ed73016cdeded42bfaec2da7b74936
   - enabled: 1
-    path: Assets/Scenes/Cave 1.unity
+    path: Assets/Scenes/Level_BigCave.unity
     guid: 856b38bf24622754e976abf9428ac2a1
   - enabled: 1
     path: Assets/Scenes/Level Essentials.unity
     guid: 166d6a9cdffedfe49b3f5947690ceb10
+  - enabled: 1
+    path: Assets/Scenes/Level_Tutorial.unity
+    guid: 54e38faa264628742b33a8ef53a58f92
   m_configObjects: {}

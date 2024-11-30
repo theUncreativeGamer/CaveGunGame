@@ -1,9 +1,10 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(order = 5)]
 public class SceneObject : ScriptableObject
 {
+
     ///Implicitly converts a scene object into a Scene reference.
     public static implicit operator Scene(SceneObject self)
     {
@@ -24,7 +25,11 @@ public class SceneObject : ScriptableObject
 
     public void OnValidate()
     {
-        sceneName = sceneAsset.name;
+        if (sceneAsset != null)
+        {
+            sceneName = sceneAsset.name;
+        }
+        else Debug.LogWarning($"The SceneAsset of {name} isn't set.");
     }
 #endif
 

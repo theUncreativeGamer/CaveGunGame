@@ -14,7 +14,7 @@ public class CheckpointManager : MonoBehaviour
     }
 
 
-    public static readonly string PlayerPrefKey = "CheckpointIndex";
+    public const string PPK_Checkpoint = "CheckpointIndex";
 
     [SerializeField] private bool resetCheckpoint = false;
     [SerializeField] private List<CheckpointBehaviour> checkpoints;
@@ -40,7 +40,7 @@ public class CheckpointManager : MonoBehaviour
                 $"at {checkpoint.transform.position} doesn't belong in {this.gameObject.name}");
             return false;
         }
-        PlayerPrefs.SetInt(PlayerPrefKey, index);
+        PlayerPrefs.SetInt(PPK_Checkpoint, index);
         return true;
     }
 
@@ -54,12 +54,12 @@ public class CheckpointManager : MonoBehaviour
 
     public void ResetCheckpoint()
     {
-        PlayerPrefs.DeleteKey(PlayerPrefKey);
+        PlayerPrefs.DeleteKey(PPK_Checkpoint);
     }
 
     public void TeleportToNextCheckpoint()
     {
-        int checkpointIndex = PlayerPrefs.GetInt(CheckpointManager.PlayerPrefKey, -1) + 1;
+        int checkpointIndex = PlayerPrefs.GetInt(CheckpointManager.PPK_Checkpoint, -1) + 1;
         if (checkpointIndex >= Checkpoints.Count) checkpointIndex -= Checkpoints.Count;
 
         Player.position = Checkpoints[checkpointIndex].transform.position;

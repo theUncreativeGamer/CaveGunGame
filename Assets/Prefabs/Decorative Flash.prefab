@@ -64,7 +64,6 @@ MonoBehaviour:
   raycastCount: 10
   maxDistance: 41.1668
   autoRedraw: 1
-  _dynamicMesh: {fileID: 0}
 --- !u!114 &2497435726385190697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +217,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 321fb91af326ffc429c33f7ee33708b0, type: 2}
+  - {fileID: 2100000, guid: 054f71ba650a12340b2b2093dff0036f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

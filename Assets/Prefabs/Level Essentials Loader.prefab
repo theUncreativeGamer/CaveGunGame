@@ -51,3 +51,6 @@ MonoBehaviour:
   OnSceneLoaded:
     m_PersistentCalls:
       m_Calls: []
+  OnPrepareEnd:
+    m_PersistentCalls:
+      m_Calls: []
