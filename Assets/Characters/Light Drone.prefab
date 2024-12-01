@@ -248,6 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1728249237457002093}
   - component: {fileID: 286568517956289413}
+  - component: {fileID: 1519190324354874450}
   m_Layer: 7
   m_Name: 'Arrow Start Position '
   m_TagString: Untagged
@@ -285,6 +286,52 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8001491304896216132, guid: 862252fc97370724d885291437b18699, type: 3}
   animationController: {fileID: 4020657583327101048}
   attackIntervalSeconds: 3
+--- !u!114 &1519190324354874450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742046256323665702}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e88a6f49db5bb7478162b76ea06832a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alertTarget: {fileID: 0}
+  alertDistance: 35
+  forgetDistance: 35
+  alertEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 286568517956289413}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  forgetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 286568517956289413}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isAlerted: 0
 --- !u!1 &4815192745135484591
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,11 +768,11 @@ MonoBehaviour:
   startFollowingDistance: 50
   stopDistance: 35
   marginOfErrorDistance: 5
-  startFleeingDistance: 25
+  startFleeingDistance: 33
   fleeingPathDepth: 10
   nextWaypointDistance: 5
-  maxSpeed: 10
-  accelaration: 5
+  maxSpeed: 20
+  accelaration: 15
   distanceToTarget: 0
 --- !u!114 &1254693165577922833
 MonoBehaviour:
@@ -757,22 +804,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 286568517956289413}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 6107122817821586171}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6107122817821586171}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
+      - m_Target: {fileID: 1519190324354874450}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -797,6 +844,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 286568517956289413}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1519190324354874450}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -916,7 +975,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0
   MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
