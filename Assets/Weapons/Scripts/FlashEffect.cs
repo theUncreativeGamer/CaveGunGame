@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using Utilities;
 
@@ -18,10 +19,22 @@ public class FlashEffect : MonoBehaviour
 
     private MeshFilter meshFilter;
 
+
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
+        if (Selection.activeGameObject == gameObject) return;
         int rayCount = Mathf.Clamp((int)(fovDegrees / 10f), 3, raycastCount);
+        DrawGizmo(rayCount);
+    }
 
+    private void OnDrawGizmosSelected()
+    {
+        DrawGizmo(raycastCount);
+    }
+
+    private void DrawGizmo(int rayCount)
+    {
         float halfFov = fovDegrees / 2;
         float angle = transform.rotation.eulerAngles.z + halfFov;
         float angleIncrease = fovDegrees / rayCount;
@@ -63,6 +76,7 @@ public class FlashEffect : MonoBehaviour
         // Optionally close the spotlight shape
         Gizmos.DrawLine(prevPoint, origin);
     }
+#endif
 
     private void Awake()
     {

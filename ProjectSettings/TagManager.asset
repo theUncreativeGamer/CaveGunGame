@@ -62,6 +62,9 @@ TagManager:
   - name: vis eff
     uniqueID: 3316941529
     locked: 0
+  - name: Foreground
+    uniqueID: 3116385075
+    locked: 0
   - name: ui
     uniqueID: 2950470515
     locked: 0

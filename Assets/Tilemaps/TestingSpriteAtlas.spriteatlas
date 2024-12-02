@@ -37,6 +37,7 @@ SpriteAtlas:
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
+    - c6e30682f9526654086be4d8c928abce: 21300000
     - 38f59d1363f09d44ca1b00564897097a: 878394818
     - 38f59d1363f09d44ca1b00564897097a: -1569507795
     - 38f59d1363f09d44ca1b00564897097a: -1513263246
@@ -180,6 +181,7 @@ SpriteAtlas:
     - 30ee253d7360eb347861bbf78ea1b3a7: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: c6e30682f9526654086be4d8c928abce, type: 3}
   - {fileID: 878394818, guid: 38f59d1363f09d44ca1b00564897097a, type: 3}
   - {fileID: -1569507795, guid: 38f59d1363f09d44ca1b00564897097a, type: 3}
   - {fileID: -1513263246, guid: 38f59d1363f09d44ca1b00564897097a, type: 3}
@@ -322,6 +324,7 @@ SpriteAtlas:
   - {fileID: -591576447, guid: 5a98fbcce12ba2c4e98e92139072184c, type: 3}
   - {fileID: 21300000, guid: 30ee253d7360eb347861bbf78ea1b3a7, type: 3}
   m_PackedSpriteNamesToIndex:
+  - dithering dark gray
   - aaaaa_32
   - aaaaa_33
   - aaaaa_30

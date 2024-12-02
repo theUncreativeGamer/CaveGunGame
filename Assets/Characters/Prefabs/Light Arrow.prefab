@@ -299,7 +299,7 @@ MonoBehaviour:
     m_Bits: 65
   initialFlyingSpeed: 5
   aiDelay: 0.5
-  lifeSpanSeconds: 10
+  lifeSpanSeconds: 5
   startAiEvents:
     m_PersistentCalls:
       m_Calls:

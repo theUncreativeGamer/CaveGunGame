@@ -766,9 +766,9 @@ MonoBehaviour:
   target: {fileID: 0}
   animationController: {fileID: 4020657583327101048}
   startFollowingDistance: 50
-  stopDistance: 35
+  stopDistance: 32
   marginOfErrorDistance: 5
-  startFleeingDistance: 33
+  startFleeingDistance: 32
   fleeingPathDepth: 10
   nextWaypointDistance: 5
   maxSpeed: 20
