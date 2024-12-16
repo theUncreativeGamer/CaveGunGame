@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ResetProgress()

@@ -19,6 +19,7 @@ public class GamePauser : MonoBehaviour
     {
         instance = this;
     }
+
     void Update()
     {
         // Check for pause input (e.g., "Escape" key)
@@ -34,6 +35,7 @@ public class GamePauser : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0;
         OnPause.Invoke();
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Unpause()
@@ -42,6 +44,7 @@ public class GamePauser : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
         OnUnpause.Invoke();
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void EndGame(float delay)
@@ -56,5 +59,6 @@ public class GamePauser : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0;
         OnEnd.Invoke();
+        Cursor.lockState = CursorLockMode.None;
     }
 }
